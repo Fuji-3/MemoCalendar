@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="YoruTableViewCell" id="IqX-HS-GyQ" customClass="YoruTableViewCell" customModule="MemoCalendar" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="430" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IqX-HS-GyQ" id="Yk1-q7-AjP">
+                <rect key="frame" x="0.0" y="0.0" width="430" height="50"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yoru" translatesAutoresizingMaskIntoConstraints="NO" id="M1F-4C-mJz">
+                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                        <color key="backgroundColor" red="0.10227135599999999" green="0.95637712959999999" blue="0.1135011542" alpha="0.6456365261" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="5ky-Qb-zO7"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="夜食" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gf8-L2-ENp">
+                        <rect key="frame" x="50" y="0.0" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="WmK-BG-Dtv"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2bv-up-DJf">
+                        <rect key="frame" x="380" y="0.0" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="HlW-1Y-9gY"/>
+                        </constraints>
+                        <buttonConfiguration key="configuration" style="plain" image="plus.rectangle" catalog="system"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0kcal" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JnD-zY-qSc">
+                        <rect key="frame" x="100" y="0.0" width="280" height="50"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="M1F-4C-mJz" firstAttribute="leading" secondItem="Yk1-q7-AjP" secondAttribute="leading" id="0mp-0I-PV8"/>
+                    <constraint firstItem="gf8-L2-ENp" firstAttribute="leading" secondItem="M1F-4C-mJz" secondAttribute="trailing" id="2oN-b3-w7U"/>
+                    <constraint firstAttribute="bottom" secondItem="gf8-L2-ENp" secondAttribute="bottom" id="3qb-f8-QCe"/>
+                    <constraint firstAttribute="bottom" secondItem="JnD-zY-qSc" secondAttribute="bottom" id="5N3-UH-GeV"/>
+                    <constraint firstItem="2bv-up-DJf" firstAttribute="top" secondItem="Yk1-q7-AjP" secondAttribute="top" id="O5k-FK-uUV"/>
+                    <constraint firstItem="2bv-up-DJf" firstAttribute="leading" secondItem="JnD-zY-qSc" secondAttribute="trailing" id="Pe2-86-9fO"/>
+                    <constraint firstItem="gf8-L2-ENp" firstAttribute="top" secondItem="Yk1-q7-AjP" secondAttribute="top" id="XMg-Hs-LqF"/>
+                    <constraint firstAttribute="trailing" secondItem="2bv-up-DJf" secondAttribute="trailing" id="Xp0-7Q-rVx"/>
+                    <constraint firstItem="JnD-zY-qSc" firstAttribute="top" secondItem="Yk1-q7-AjP" secondAttribute="top" id="hmc-du-XrR"/>
+                    <constraint firstItem="M1F-4C-mJz" firstAttribute="top" secondItem="Yk1-q7-AjP" secondAttribute="top" id="kOw-1P-3Hm"/>
+                    <constraint firstAttribute="bottom" secondItem="M1F-4C-mJz" secondAttribute="bottom" id="mAm-nd-aBY"/>
+                    <constraint firstAttribute="bottom" secondItem="2bv-up-DJf" secondAttribute="bottom" id="oY6-0P-tkn"/>
+                    <constraint firstItem="JnD-zY-qSc" firstAttribute="leading" secondItem="gf8-L2-ENp" secondAttribute="trailing" id="s3e-22-Hed"/>
+                    <constraint firstItem="gf8-L2-ENp" firstAttribute="leading" secondItem="M1F-4C-mJz" secondAttribute="trailing" id="sdB-kg-JMP"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="Laq-MZ-GzB"/>
+            <point key="canvasLocation" x="442.74809160305341" y="8.4507042253521139"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="plus.rectangle" catalog="system" width="128" height="93"/>
+        <image name="yoru" width="256" height="256"/>
+    </resources>
+</document>

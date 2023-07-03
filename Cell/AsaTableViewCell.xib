@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AsaTableViewCell" rowHeight="52" id="A0Z-Ez-AeH" customClass="AsaTableViewCell" customModule="MemoCalendar" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="430" height="52"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="A0Z-Ez-AeH" id="63K-mn-fcB">
+                <rect key="frame" x="0.0" y="0.0" width="430" height="52"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="assa" translatesAutoresizingMaskIntoConstraints="NO" id="GyW-a8-wMj">
+                        <rect key="frame" x="0.0" y="0.0" width="50" height="52"/>
+                        <color key="backgroundColor" red="0.10227135599999999" green="0.95637712959999999" blue="0.1135011542" alpha="0.6456365261" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="6nk-5S-Pwd"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="朝食" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZ3-KE-tlm">
+                        <rect key="frame" x="50" y="0.0" width="50" height="52"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="cRI-LL-8wQ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0kcal" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aah-8H-Z0M">
+                        <rect key="frame" x="100" y="0.0" width="275" height="52"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yd2-iJ-aoW">
+                        <rect key="frame" x="380" y="0.0" width="50" height="52"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="3d4-mw-NTy"/>
+                        </constraints>
+                        <buttonConfiguration key="configuration" style="plain" image="plus.rectangle" catalog="system"/>
+                        <connections>
+                            <action selector="AddButton:" destination="A0Z-Ez-AeH" eventType="touchUpInside" id="Z6L-Rf-4pi"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="aah-8H-Z0M" firstAttribute="top" secondItem="63K-mn-fcB" secondAttribute="top" id="5do-1A-PTg"/>
+                    <constraint firstAttribute="bottom" secondItem="aah-8H-Z0M" secondAttribute="bottom" id="6yK-21-xzs"/>
+                    <constraint firstItem="yd2-iJ-aoW" firstAttribute="top" secondItem="63K-mn-fcB" secondAttribute="top" id="9U9-s9-ZNy"/>
+                    <constraint firstItem="GyW-a8-wMj" firstAttribute="leading" secondItem="63K-mn-fcB" secondAttribute="leading" id="BnI-7J-NTk"/>
+                    <constraint firstAttribute="bottom" secondItem="gZ3-KE-tlm" secondAttribute="bottom" id="Ccm-ZZ-ejL"/>
+                    <constraint firstAttribute="trailing" secondItem="yd2-iJ-aoW" secondAttribute="trailing" id="Cqq-oY-El1"/>
+                    <constraint firstAttribute="bottom" secondItem="GyW-a8-wMj" secondAttribute="bottom" id="EwZ-dg-Mc5"/>
+                    <constraint firstItem="GyW-a8-wMj" firstAttribute="top" secondItem="63K-mn-fcB" secondAttribute="top" id="MMf-rO-M3q"/>
+                    <constraint firstItem="aah-8H-Z0M" firstAttribute="leading" secondItem="gZ3-KE-tlm" secondAttribute="trailing" id="PkV-Gh-tiD"/>
+                    <constraint firstAttribute="bottom" secondItem="yd2-iJ-aoW" secondAttribute="bottom" id="Vj2-iS-Mnm"/>
+                    <constraint firstItem="gZ3-KE-tlm" firstAttribute="top" secondItem="63K-mn-fcB" secondAttribute="top" id="cQ2-nQ-Ymq"/>
+                    <constraint firstItem="yd2-iJ-aoW" firstAttribute="leading" secondItem="aah-8H-Z0M" secondAttribute="trailing" constant="5" id="gzR-pU-pnA"/>
+                    <constraint firstItem="gZ3-KE-tlm" firstAttribute="leading" secondItem="GyW-a8-wMj" secondAttribute="trailing" id="php-gA-jB4"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="JqW-Ex-lON"/>
+            <point key="canvasLocation" x="29" y="-230"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="assa" width="256" height="256"/>
+        <image name="plus.rectangle" catalog="system" width="128" height="93"/>
+    </resources>
+</document>
