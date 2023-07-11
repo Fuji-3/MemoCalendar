@@ -10,13 +10,15 @@
 		2DA905074E4B2E729F85BE01 /* Pods_MemoCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C10BEEB849FFA5C337B1C5BC /* Pods_MemoCalendar.framework */; };
 		762E1F172A51B43500E1DFCC /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762E1F152A51B43500E1DFCC /* TableViewController.swift */; };
 		762E1F1C2A51B5B000E1DFCC /* TableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 762E1F1B2A51B5B000E1DFCC /* TableViewController.storyboard */; };
-		762E1F1E2A526CAE00E1DFCC /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762E1F1D2A526CAE00E1DFCC /* File.swift */; };
+		762E1F1E2A526CAE00E1DFCC /* Cell_touch_event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762E1F1D2A526CAE00E1DFCC /* Cell_touch_event.swift */; };
+		762E1F202A554C3100E1DFCC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 762E1F1F2A554C3100E1DFCC /* GoogleService-Info.plist */; };
 		76D57F302A4961890090DE94 /* AsaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D57F2E2A4961890090DE94 /* AsaTableViewCell.swift */; };
 		76D57F312A4961890090DE94 /* AsaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76D57F2F2A4961890090DE94 /* AsaTableViewCell.xib */; };
 		76D57F342A4961CC0090DE94 /* HiruTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D57F322A4961CC0090DE94 /* HiruTableViewCell.swift */; };
 		76D57F352A4961CC0090DE94 /* HiruTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76D57F332A4961CC0090DE94 /* HiruTableViewCell.xib */; };
 		76D57F382A4961E70090DE94 /* YoruTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D57F362A4961E70090DE94 /* YoruTableViewCell.swift */; };
 		76D57F392A4961E70090DE94 /* YoruTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76D57F372A4961E70090DE94 /* YoruTableViewCell.xib */; };
+		76F6E6202A5956650087C063 /* SearchFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F6E61F2A5956650087C063 /* SearchFood.swift */; };
 		76FF55222A41F09C001C500F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FF55212A41F09C001C500F /* AppDelegate.swift */; };
 		76FF55242A41F09C001C500F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FF55232A41F09C001C500F /* SceneDelegate.swift */; };
 		76FF55262A41F09C001C500F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FF55252A41F09C001C500F /* ViewController.swift */; };
@@ -31,13 +33,15 @@
 		14F2D5D283623515E2D16810 /* Pods-MemoCalendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoCalendar.release.xcconfig"; path = "Target Support Files/Pods-MemoCalendar/Pods-MemoCalendar.release.xcconfig"; sourceTree = "<group>"; };
 		762E1F152A51B43500E1DFCC /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		762E1F1B2A51B5B000E1DFCC /* TableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TableViewController.storyboard; sourceTree = "<group>"; };
-		762E1F1D2A526CAE00E1DFCC /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		762E1F1D2A526CAE00E1DFCC /* Cell_touch_event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell_touch_event.swift; sourceTree = "<group>"; };
+		762E1F1F2A554C3100E1DFCC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		76D57F2E2A4961890090DE94 /* AsaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsaTableViewCell.swift; sourceTree = "<group>"; };
 		76D57F2F2A4961890090DE94 /* AsaTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AsaTableViewCell.xib; sourceTree = "<group>"; };
 		76D57F322A4961CC0090DE94 /* HiruTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiruTableViewCell.swift; sourceTree = "<group>"; };
 		76D57F332A4961CC0090DE94 /* HiruTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HiruTableViewCell.xib; sourceTree = "<group>"; };
 		76D57F362A4961E70090DE94 /* YoruTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoruTableViewCell.swift; sourceTree = "<group>"; };
 		76D57F372A4961E70090DE94 /* YoruTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YoruTableViewCell.xib; sourceTree = "<group>"; };
+		76F6E61F2A5956650087C063 /* SearchFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFood.swift; sourceTree = "<group>"; };
 		76FF551E2A41F09C001C500F /* MemoCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76FF55212A41F09C001C500F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76FF55232A41F09C001C500F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +81,7 @@
 		762E1F112A4F1B2100E1DFCC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				76F6E61F2A5956650087C063 /* SearchFood.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -115,16 +120,24 @@
 				76D57F332A4961CC0090DE94 /* HiruTableViewCell.xib */,
 				76D57F362A4961E70090DE94 /* YoruTableViewCell.swift */,
 				76D57F372A4961E70090DE94 /* YoruTableViewCell.xib */,
-				762E1F1D2A526CAE00E1DFCC /* File.swift */,
+				762E1F1D2A526CAE00E1DFCC /* Cell_touch_event.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		76F6E6212A5CF2130087C063 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				762E1F102A4F1B0F00E1DFCC /* MVP */,
+				762E1F142A51B33500E1DFCC /* AddViewController */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		76FF55152A41F09C001C500F = {
 			isa = PBXGroup;
 			children = (
-				762E1F142A51B33500E1DFCC /* AddViewController */,
-				762E1F102A4F1B0F00E1DFCC /* MVP */,
+				76F6E6212A5CF2130087C063 /* New Group */,
 				76D57F2D2A4961590090DE94 /* Cell */,
 				76FF55202A41F09C001C500F /* MemoCalendar */,
 				76FF551F2A41F09C001C500F /* Products */,
@@ -151,6 +164,7 @@
 				76FF552A2A41F09F001C500F /* Assets.xcassets */,
 				76FF552C2A41F09F001C500F /* LaunchScreen.storyboard */,
 				76FF552F2A41F09F001C500F /* Info.plist */,
+				762E1F1F2A554C3100E1DFCC /* GoogleService-Info.plist */,
 			);
 			path = MemoCalendar;
 			sourceTree = "<group>";
@@ -234,6 +248,7 @@
 			files = (
 				76FF552E2A41F09F001C500F /* LaunchScreen.storyboard in Resources */,
 				76D57F352A4961CC0090DE94 /* HiruTableViewCell.xib in Resources */,
+				762E1F202A554C3100E1DFCC /* GoogleService-Info.plist in Resources */,
 				76FF552B2A41F09F001C500F /* Assets.xcassets in Resources */,
 				76FF55382A428D20001C500F /* DayTableViewCell.xib in Resources */,
 				76FF55292A41F09C001C500F /* Main.storyboard in Resources */,
@@ -297,9 +312,10 @@
 				76FF55372A428D20001C500F /* DayTableViewCell.swift in Sources */,
 				762E1F172A51B43500E1DFCC /* TableViewController.swift in Sources */,
 				76D57F342A4961CC0090DE94 /* HiruTableViewCell.swift in Sources */,
+				76F6E6202A5956650087C063 /* SearchFood.swift in Sources */,
 				76D57F382A4961E70090DE94 /* YoruTableViewCell.swift in Sources */,
 				76D57F302A4961890090DE94 /* AsaTableViewCell.swift in Sources */,
-				762E1F1E2A526CAE00E1DFCC /* File.swift in Sources */,
+				762E1F1E2A526CAE00E1DFCC /* Cell_touch_event.swift in Sources */,
 				76FF55242A41F09C001C500F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

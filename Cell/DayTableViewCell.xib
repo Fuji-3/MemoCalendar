@@ -23,16 +23,16 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oTJ-gO-Prg">
                                 <rect key="frame" x="0.0" y="0.0" width="187.66666666666666" height="44"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="写真" buttonSize="medium">
-                                    <color key="baseForegroundColor" red="0.106508714" green="0.72984184370000005" blue="0.1470247697" alpha="0.97424409830000003" colorSpace="custom" customColorSpace="displayP3"/>
+                                <buttonConfiguration key="configuration" style="filled" image="camera" catalog="system" title="写真" buttonSize="medium">
+                                    <color key="baseForegroundColor" red="0.25264382844134936" green="0.5" blue="0.25766681916143586" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="baseBackgroundColor" systemColor="systemBackgroundColor"/>
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pwr-gq-ZaM">
                                 <rect key="frame" x="187.66666666666663" y="0.0" width="187.33333333333337" height="44"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="バーコード">
-                                    <color key="baseForegroundColor" red="0.106508714" green="0.72984184370000005" blue="0.1470247697" alpha="0.97424409830000003" colorSpace="custom" customColorSpace="displayP3"/>
+                                <buttonConfiguration key="configuration" style="filled" image="barcode.viewfinder" catalog="system" title="バーコード">
+                                    <color key="baseForegroundColor" red="0.25455201680185507" green="0.5037764396864115" blue="0.25961294556494119" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="baseBackgroundColor" systemColor="systemBackgroundColor"/>
                                 </buttonConfiguration>
                             </button>
@@ -56,10 +56,12 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="-191" y="25"/>
+            <point key="canvasLocation" x="-280" y="-3"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="barcode.viewfinder" catalog="system" width="128" height="115"/>
+        <image name="camera" catalog="system" width="128" height="93"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
