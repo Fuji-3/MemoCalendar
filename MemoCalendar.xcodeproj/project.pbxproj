@@ -19,6 +19,9 @@
 		76D57F382A4961E70090DE94 /* YoruTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D57F362A4961E70090DE94 /* YoruTableViewCell.swift */; };
 		76D57F392A4961E70090DE94 /* YoruTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76D57F372A4961E70090DE94 /* YoruTableViewCell.xib */; };
 		76F6E6202A5956650087C063 /* SearchFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F6E61F2A5956650087C063 /* SearchFood.swift */; };
+		76F6E6252A5CF2F00087C063 /* AddTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F6E6232A5CF2F00087C063 /* AddTableViewCell.swift */; };
+		76F6E6262A5CF2F00087C063 /* AddTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76F6E6242A5CF2F00087C063 /* AddTableViewCell.xib */; };
+		76F6E6292A5CF4F00087C063 /* SearchFoodPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F6E6282A5CF4F00087C063 /* SearchFoodPresenter.swift */; };
 		76FF55222A41F09C001C500F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FF55212A41F09C001C500F /* AppDelegate.swift */; };
 		76FF55242A41F09C001C500F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FF55232A41F09C001C500F /* SceneDelegate.swift */; };
 		76FF55262A41F09C001C500F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FF55252A41F09C001C500F /* ViewController.swift */; };
@@ -42,6 +45,10 @@
 		76D57F362A4961E70090DE94 /* YoruTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoruTableViewCell.swift; sourceTree = "<group>"; };
 		76D57F372A4961E70090DE94 /* YoruTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YoruTableViewCell.xib; sourceTree = "<group>"; };
 		76F6E61F2A5956650087C063 /* SearchFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFood.swift; sourceTree = "<group>"; };
+		76F6E6232A5CF2F00087C063 /* AddTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTableViewCell.swift; sourceTree = "<group>"; };
+		76F6E6242A5CF2F00087C063 /* AddTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddTableViewCell.xib; sourceTree = "<group>"; };
+		76F6E6282A5CF4F00087C063 /* SearchFoodPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFoodPresenter.swift; sourceTree = "<group>"; };
+		76F6E62A2A6520250087C063 /* MemoCalendar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MemoCalendar.entitlements; sourceTree = "<group>"; };
 		76FF551E2A41F09C001C500F /* MemoCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76FF55212A41F09C001C500F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76FF55232A41F09C001C500F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +96,7 @@
 		762E1F122A4F1B6000E1DFCC /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				76F6E6282A5CF4F00087C063 /* SearchFoodPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -96,17 +104,11 @@
 		762E1F132A4F1B6C00E1DFCC /* View */ = {
 			isa = PBXGroup;
 			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		762E1F142A51B33500E1DFCC /* AddViewController */ = {
-			isa = PBXGroup;
-			children = (
 				762E1F152A51B43500E1DFCC /* TableViewController.swift */,
 				762E1F1B2A51B5B000E1DFCC /* TableViewController.storyboard */,
+				76F6E6222A5CF2C90087C063 /* Cell */,
 			);
-			path = AddViewController;
+			path = View;
 			sourceTree = "<group>";
 		};
 		76D57F2D2A4961590090DE94 /* Cell */ = {
@@ -129,14 +131,32 @@
 			isa = PBXGroup;
 			children = (
 				762E1F102A4F1B0F00E1DFCC /* MVP */,
-				762E1F142A51B33500E1DFCC /* AddViewController */,
 			);
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		76F6E6222A5CF2C90087C063 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				76F6E6232A5CF2F00087C063 /* AddTableViewCell.swift */,
+				76F6E6242A5CF2F00087C063 /* AddTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		76F6E6272A5CF3650087C063 /* MainTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				76FF55272A41F09C001C500F /* Main.storyboard */,
+				76FF55252A41F09C001C500F /* ViewController.swift */,
+			);
+			path = MainTableViewController;
 			sourceTree = "<group>";
 		};
 		76FF55152A41F09C001C500F = {
 			isa = PBXGroup;
 			children = (
+				76F6E6272A5CF3650087C063 /* MainTableViewController */,
 				76F6E6212A5CF2130087C063 /* New Group */,
 				76D57F2D2A4961590090DE94 /* Cell */,
 				76FF55202A41F09C001C500F /* MemoCalendar */,
@@ -157,10 +177,9 @@
 		76FF55202A41F09C001C500F /* MemoCalendar */ = {
 			isa = PBXGroup;
 			children = (
+				76F6E62A2A6520250087C063 /* MemoCalendar.entitlements */,
 				76FF55212A41F09C001C500F /* AppDelegate.swift */,
 				76FF55232A41F09C001C500F /* SceneDelegate.swift */,
-				76FF55252A41F09C001C500F /* ViewController.swift */,
-				76FF55272A41F09C001C500F /* Main.storyboard */,
 				76FF552A2A41F09F001C500F /* Assets.xcassets */,
 				76FF552C2A41F09F001C500F /* LaunchScreen.storyboard */,
 				76FF552F2A41F09F001C500F /* Info.plist */,
@@ -247,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76FF552E2A41F09F001C500F /* LaunchScreen.storyboard in Resources */,
+				76F6E6262A5CF2F00087C063 /* AddTableViewCell.xib in Resources */,
 				76D57F352A4961CC0090DE94 /* HiruTableViewCell.xib in Resources */,
 				762E1F202A554C3100E1DFCC /* GoogleService-Info.plist in Resources */,
 				76FF552B2A41F09F001C500F /* Assets.xcassets in Resources */,
@@ -308,10 +328,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				76FF55262A41F09C001C500F /* ViewController.swift in Sources */,
+				76F6E6252A5CF2F00087C063 /* AddTableViewCell.swift in Sources */,
 				76FF55222A41F09C001C500F /* AppDelegate.swift in Sources */,
 				76FF55372A428D20001C500F /* DayTableViewCell.swift in Sources */,
 				762E1F172A51B43500E1DFCC /* TableViewController.swift in Sources */,
 				76D57F342A4961CC0090DE94 /* HiruTableViewCell.swift in Sources */,
+				76F6E6292A5CF4F00087C063 /* SearchFoodPresenter.swift in Sources */,
 				76F6E6202A5956650087C063 /* SearchFood.swift in Sources */,
 				76D57F382A4961E70090DE94 /* YoruTableViewCell.swift in Sources */,
 				76D57F302A4961890090DE94 /* AsaTableViewCell.swift in Sources */,
@@ -462,6 +484,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MemoCalendar/MemoCalendar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 58ZU762N3F;
@@ -490,6 +513,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MemoCalendar/MemoCalendar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 58ZU762N3F;

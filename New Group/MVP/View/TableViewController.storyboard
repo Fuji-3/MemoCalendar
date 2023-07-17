@@ -19,7 +19,7 @@
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="8B5-gX-NIr">
                                 <rect key="frame" x="0.0" y="64" width="375" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="Pvb-Gr-mqa"/>
                                 </connections>
@@ -60,11 +60,20 @@
                                 <action selector="buttonDismis:" destination="Y6W-OH-hqX" id="lbW-kt-kuv"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="検索" id="kM3-qQ-gRF">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="searchBarButton:" destination="Y6W-OH-hqX" id="Hcj-21-jqy"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchFoot_searchBar" destination="8B5-gX-NIr" id="D5j-rt-y4a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1101.5999999999999" y="-10.344827586206897"/>
+            <point key="canvasLocation" x="919" y="-23"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aJs-ov-Z7d">

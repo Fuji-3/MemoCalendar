@@ -169,6 +169,8 @@ extension ViewController:CellButtonTapProtocol{
     func AddButonTap(identifier: String, nib: UINib) {
         let stroyboad:UIStoryboard = UIStoryboard(name: "TableViewController", bundle: nil)
         let vc = stroyboad.instantiateViewController(withIdentifier: "initAddVC") as! TableViewController
+        
+        
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .fullScreen
         var today:String = ""
