@@ -7,7 +7,7 @@
 
 import Foundation
 import FirebaseAppCheck
-import Firebase
+import FirebaseCore
 
 class YourAppCheckProviderFactory: NSObject, AppCheckProviderFactory {
   func createProvider(with app: FirebaseApp) -> AppCheckProvider? {
