@@ -22,6 +22,9 @@
 		76F6E6252A5CF2F00087C063 /* AddTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F6E6232A5CF2F00087C063 /* AddTableViewCell.swift */; };
 		76F6E6262A5CF2F00087C063 /* AddTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76F6E6242A5CF2F00087C063 /* AddTableViewCell.xib */; };
 		76F6E6292A5CF4F00087C063 /* SearchFoodPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F6E6282A5CF4F00087C063 /* SearchFoodPresenter.swift */; };
+		76F6E62C2A652BD50087C063 /* MemoCalendarAppCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F6E62B2A652BD50087C063 /* MemoCalendarAppCheck.swift */; };
+		76F6E6342A6CD0AC0087C063 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F6E6322A6CD0AC0087C063 /* SigninViewController.swift */; };
+		76F6E6352A6CD0AC0087C063 /* SigninViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76F6E6332A6CD0AC0087C063 /* SigninViewController.xib */; };
 		76FF55222A41F09C001C500F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FF55212A41F09C001C500F /* AppDelegate.swift */; };
 		76FF55242A41F09C001C500F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FF55232A41F09C001C500F /* SceneDelegate.swift */; };
 		76FF55262A41F09C001C500F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FF55252A41F09C001C500F /* ViewController.swift */; };
@@ -49,6 +52,9 @@
 		76F6E6242A5CF2F00087C063 /* AddTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddTableViewCell.xib; sourceTree = "<group>"; };
 		76F6E6282A5CF4F00087C063 /* SearchFoodPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFoodPresenter.swift; sourceTree = "<group>"; };
 		76F6E62A2A6520250087C063 /* MemoCalendar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MemoCalendar.entitlements; sourceTree = "<group>"; };
+		76F6E62B2A652BD50087C063 /* MemoCalendarAppCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCalendarAppCheck.swift; sourceTree = "<group>"; };
+		76F6E6322A6CD0AC0087C063 /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
+		76F6E6332A6CD0AC0087C063 /* SigninViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SigninViewController.xib; sourceTree = "<group>"; };
 		76FF551E2A41F09C001C500F /* MemoCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76FF55212A41F09C001C500F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76FF55232A41F09C001C500F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,12 +133,12 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		76F6E6212A5CF2130087C063 /* New Group */ = {
+		76F6E6212A5CF2130087C063 /* AddTavleViewController */ = {
 			isa = PBXGroup;
 			children = (
 				762E1F102A4F1B0F00E1DFCC /* MVP */,
 			);
-			path = "New Group";
+			path = AddTavleViewController;
 			sourceTree = "<group>";
 		};
 		76F6E6222A5CF2C90087C063 /* Cell */ = {
@@ -153,11 +159,45 @@
 			path = MainTableViewController;
 			sourceTree = "<group>";
 		};
+		76F6E62E2A6CD00B0087C063 /* SigninVC */ = {
+			isa = PBXGroup;
+			children = (
+				76F6E6312A6CD0430087C063 /* Model */,
+				76F6E6302A6CD0340087C063 /* Presenter */,
+				76F6E62F2A6CD01E0087C063 /* View */,
+			);
+			path = SigninVC;
+			sourceTree = "<group>";
+		};
+		76F6E62F2A6CD01E0087C063 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				76F6E6322A6CD0AC0087C063 /* SigninViewController.swift */,
+				76F6E6332A6CD0AC0087C063 /* SigninViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		76F6E6302A6CD0340087C063 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		76F6E6312A6CD0430087C063 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		76FF55152A41F09C001C500F = {
 			isa = PBXGroup;
 			children = (
+				76F6E62E2A6CD00B0087C063 /* SigninVC */,
 				76F6E6272A5CF3650087C063 /* MainTableViewController */,
-				76F6E6212A5CF2130087C063 /* New Group */,
+				76F6E6212A5CF2130087C063 /* AddTavleViewController */,
 				76D57F2D2A4961590090DE94 /* Cell */,
 				76FF55202A41F09C001C500F /* MemoCalendar */,
 				76FF551F2A41F09C001C500F /* Products */,
@@ -184,6 +224,7 @@
 				76FF552C2A41F09F001C500F /* LaunchScreen.storyboard */,
 				76FF552F2A41F09F001C500F /* Info.plist */,
 				762E1F1F2A554C3100E1DFCC /* GoogleService-Info.plist */,
+				76F6E62B2A652BD50087C063 /* MemoCalendarAppCheck.swift */,
 			);
 			path = MemoCalendar;
 			sourceTree = "<group>";
@@ -268,6 +309,7 @@
 				76FF552E2A41F09F001C500F /* LaunchScreen.storyboard in Resources */,
 				76F6E6262A5CF2F00087C063 /* AddTableViewCell.xib in Resources */,
 				76D57F352A4961CC0090DE94 /* HiruTableViewCell.xib in Resources */,
+				76F6E6352A6CD0AC0087C063 /* SigninViewController.xib in Resources */,
 				762E1F202A554C3100E1DFCC /* GoogleService-Info.plist in Resources */,
 				76FF552B2A41F09F001C500F /* Assets.xcassets in Resources */,
 				76FF55382A428D20001C500F /* DayTableViewCell.xib in Resources */,
@@ -327,12 +369,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76F6E6342A6CD0AC0087C063 /* SigninViewController.swift in Sources */,
 				76FF55262A41F09C001C500F /* ViewController.swift in Sources */,
 				76F6E6252A5CF2F00087C063 /* AddTableViewCell.swift in Sources */,
 				76FF55222A41F09C001C500F /* AppDelegate.swift in Sources */,
 				76FF55372A428D20001C500F /* DayTableViewCell.swift in Sources */,
 				762E1F172A51B43500E1DFCC /* TableViewController.swift in Sources */,
 				76D57F342A4961CC0090DE94 /* HiruTableViewCell.swift in Sources */,
+				76F6E62C2A652BD50087C063 /* MemoCalendarAppCheck.swift in Sources */,
 				76F6E6292A5CF4F00087C063 /* SearchFoodPresenter.swift in Sources */,
 				76F6E6202A5956650087C063 /* SearchFood.swift in Sources */,
 				76D57F382A4961E70090DE94 /* YoruTableViewCell.swift in Sources */,

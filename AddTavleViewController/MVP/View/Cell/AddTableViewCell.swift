@@ -8,6 +8,9 @@
 import UIKit
 
 class AddTableViewCell: UITableViewCell {
+    @IBOutlet weak var syouhine_label: UILabel!
+    @IBOutlet weak var syouhine_value: UILabel!
+    
     static var  identifier:String {
         String(describing: self)
     }
@@ -25,5 +28,7 @@ class AddTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+    @IBAction func addButton(_ sender: UIButton) {
+        
+    }
 }

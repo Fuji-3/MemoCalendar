@@ -28,7 +28,7 @@
                                 <rect key="frame" x="0.0" y="120" width="375" height="547"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="GyQ-dX-JNS">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Add_cell" id="GyQ-dX-JNS">
                                         <rect key="frame" x="0.0" y="50" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GyQ-dX-JNS" id="wWC-D4-5km">
@@ -68,12 +68,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="AddDataTableView" destination="tsn-Nk-1Tg" id="7G4-Y9-N0d"/>
                         <outlet property="searchFoot_searchBar" destination="8B5-gX-NIr" id="D5j-rt-y4a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="919" y="-23"/>
+            <point key="canvasLocation" x="942" y="-10"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aJs-ov-Z7d">

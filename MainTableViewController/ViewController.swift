@@ -25,18 +25,19 @@ class ViewController: UIViewController {
         self.dayTableView.delegate = self
         self.dayTableView.dataSource = self
     
-        self.dayTableView.register(DayTableViewCell.nib, forCellReuseIdentifier: DayTableViewCell.identifier)
+        //self.dayTableView.register(DayTableViewCell.nib, forCellReuseIdentifier: DayTableViewCell.identifier)
         self.dayTableView.register(AsaTableViewCell.nib, forCellReuseIdentifier: AsaTableViewCell.identifier)
         self.dayTableView.register(HiruTableViewCell.nib, forCellReuseIdentifier: HiruTableViewCell.identifier)
         self.dayTableView.register(YoruTableViewCell.nib, forCellReuseIdentifier: YoruTableViewCell.identifier)
         
         self.dayTableView.rowHeight = 50
         self.getFirebase()
+        
     }
     
     //test firebase
     func getFirebase(){
-        var ref:DatabaseReference! = Database.database().reference()
+        let ref:DatabaseReference! = Database.database().reference()
         let today = "7月10日"
         ref.child("TuhuuMemoDB/"+today).observeSingleEvent(of: .value) { snapshot in
             guard let values = snapshot.value as? [String:Any] else {return}
@@ -131,7 +132,7 @@ extension ViewController:UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -141,21 +142,21 @@ extension ViewController:UITableViewDataSource{
             let cell = tableView.dequeueReusableCell(withIdentifier: AsaTableViewCell.identifier, for: indexPath) as! AsaTableViewCell
             cell.delegate = self
             return cell
-        case [0,1]:
+        /*case [0,1]:
             let cell = tableView.dequeueReusableCell(withIdentifier: DayTableViewCell.identifier, for: indexPath) as! DayTableViewCell
-            return cell
+            return cell*/
         case [1,0]:
             let cell = tableView.dequeueReusableCell(withIdentifier: HiruTableViewCell.identifier, for: indexPath) as! HiruTableViewCell
             return cell
-        case [1,1]:
+        /*case [1,1]:
             let cell = tableView.dequeueReusableCell(withIdentifier: DayTableViewCell.identifier, for: indexPath) as! DayTableViewCell
-            return cell
+            return cell*/
         case [2,0]:
             let cell = tableView.dequeueReusableCell(withIdentifier: YoruTableViewCell.identifier, for: indexPath) as! YoruTableViewCell
             return cell
-        case [2,1]:
+        /*case [2,1]:
             let cell = tableView.dequeueReusableCell(withIdentifier: DayTableViewCell.identifier, for: indexPath) as! DayTableViewCell
-            return cell
+            return cell*/
         default:
             break
         }
@@ -169,7 +170,6 @@ extension ViewController:CellButtonTapProtocol{
     func AddButonTap(identifier: String, nib: UINib) {
         let stroyboad:UIStoryboard = UIStoryboard(name: "TableViewController", bundle: nil)
         let vc = stroyboad.instantiateViewController(withIdentifier: "initAddVC") as! TableViewController
-        
         
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .fullScreen
@@ -188,5 +188,6 @@ extension ViewController:CellButtonTapProtocol{
         nav.navigationBar.topItem?.title = today
         self.present(nav, animated: true)
     }
+    
 }
 
