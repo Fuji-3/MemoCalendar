@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Image references" minToolsVersion="12.0"/>
@@ -72,7 +72,10 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="JqW-Ex-lON"/>
-            <point key="canvasLocation" x="-814" y="-46"/>
+            <connections>
+                <outlet property="kcalLabel" destination="aah-8H-Z0M" id="JoN-bV-Aef"/>
+            </connections>
+            <point key="canvasLocation" x="-1058" y="-80"/>
         </tableViewCell>
     </objects>
     <resources>

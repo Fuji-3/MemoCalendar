@@ -10,6 +10,7 @@ protocol SearchFood_presenter_input:AnyObject{
     var numberOfFood_Data:Int{get}
     func serathBarText(text: String)
     func cellForText(row: Int)->[String:Any]
+    func serectFoodData(data:[String:Any],day:String)
 }
 protocol SearchFood_presenter_output:AnyObject{
     func output_serathData(data: [String:Any])
@@ -50,8 +51,12 @@ class SearchFood_Presenter {
     
 }
 extension SearchFood_Presenter:SearchFood_presenter_input {
+    //検索一覧から登録ボタンが押された処理
+    func serectFoodData(data: [String : Any], day: String) {
+        
+    }
+    
     func cellForText(row: Int) -> [String:Any]{
-
         let keys = Array(food_data.keys).sorted()
         
         let data = keys[row]
@@ -60,12 +65,10 @@ extension SearchFood_Presenter:SearchFood_presenter_input {
         }
         return [:]
     }
-
     
     var numberOfFood_Data: Int {
         return self.food_data.count
     }
-    
     //データ読み取り
     func serathBarText(text: String) {
         print("text:\(text)")

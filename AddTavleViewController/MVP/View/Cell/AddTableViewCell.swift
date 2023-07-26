@@ -6,10 +6,15 @@
 //
 
 import UIKit
+protocol AddCellButton:AnyObject {
+    func addCellFood(cell: AddTableViewCell)
+}
 
 class AddTableViewCell: UITableViewCell {
     @IBOutlet weak var syouhine_label: UILabel!
     @IBOutlet weak var syouhine_value: UILabel!
+    
+    var delegate:AddCellButton?
     
     static var  identifier:String {
         String(describing: self)
@@ -29,6 +34,7 @@ class AddTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     @IBAction func addButton(_ sender: UIButton) {
+        delegate?.addCellFood(cell: self)
         
     }
 }

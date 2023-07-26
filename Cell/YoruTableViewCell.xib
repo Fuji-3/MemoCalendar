@@ -37,7 +37,12 @@
                         <constraints>
                             <constraint firstAttribute="width" constant="50" id="HlW-1Y-9gY"/>
                         </constraints>
-                        <buttonConfiguration key="configuration" style="plain" image="plus.rectangle" catalog="system"/>
+                        <buttonConfiguration key="configuration" style="plain" image="plus.rectangle" catalog="system">
+                            <color key="baseForegroundColor" systemColor="systemBlueColor"/>
+                        </buttonConfiguration>
+                        <connections>
+                            <action selector="AddButton:" destination="IqX-HS-GyQ" eventType="touchUpInside" id="ceG-Gg-hOp"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0kcal" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JnD-zY-qSc">
                         <rect key="frame" x="100" y="0.0" width="280" height="50"/>
@@ -64,11 +69,17 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="Laq-MZ-GzB"/>
-            <point key="canvasLocation" x="442.74809160305341" y="8.4507042253521139"/>
+            <connections>
+                <outlet property="kcalLabel" destination="JnD-zY-qSc" id="b6s-Pn-3Ik"/>
+            </connections>
+            <point key="canvasLocation" x="-319" y="-32"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="plus.rectangle" catalog="system" width="128" height="93"/>
         <image name="yoru" width="256" height="256"/>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

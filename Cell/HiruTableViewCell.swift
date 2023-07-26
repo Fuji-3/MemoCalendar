@@ -8,6 +8,9 @@
 import UIKit
 
 class HiruTableViewCell: UITableViewCell {
+    @IBOutlet weak var kcalLabel: UILabel!
+    var delegate:CellButtonTapProtocol?
+    
     static var  identifier:String {
         String(describing: self)
     }
@@ -23,6 +26,9 @@ class HiruTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    @IBAction func AddButton(_ sender: UIButton) {
+        
     }
     
 }

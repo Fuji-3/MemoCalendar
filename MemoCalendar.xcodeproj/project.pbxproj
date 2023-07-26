@@ -10,7 +10,10 @@
 		762E1F172A51B43500E1DFCC /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762E1F152A51B43500E1DFCC /* TableViewController.swift */; };
 		762E1F1C2A51B5B000E1DFCC /* TableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 762E1F1B2A51B5B000E1DFCC /* TableViewController.storyboard */; };
 		762E1F1E2A526CAE00E1DFCC /* Cell_touch_event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762E1F1D2A526CAE00E1DFCC /* Cell_touch_event.swift */; };
-		762E1F202A554C3100E1DFCC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 762E1F1F2A554C3100E1DFCC /* GoogleService-Info.plist */; };
+		762EBFC22A700679008882B9 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762EBFC12A700679008882B9 /* File.swift */; };
+		762EBFC92A70D616008882B9 /* SerectFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762EBFC82A70D616008882B9 /* SerectFood.swift */; };
+		76B1393B2A6D2B0B00B2518E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 76B1393A2A6D2B0A00B2518E /* GoogleService-Info.plist */; };
+		76B139402A6D371B00B2518E /* Localizable.strings(Japanese) in Resources */ = {isa = PBXBuildFile; fileRef = 76B1393F2A6D371B00B2518E /* Localizable.strings(Japanese) */; };
 		76D57F302A4961890090DE94 /* AsaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D57F2E2A4961890090DE94 /* AsaTableViewCell.swift */; };
 		76D57F312A4961890090DE94 /* AsaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76D57F2F2A4961890090DE94 /* AsaTableViewCell.xib */; };
 		76D57F342A4961CC0090DE94 /* HiruTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D57F322A4961CC0090DE94 /* HiruTableViewCell.swift */; };
@@ -32,16 +35,18 @@
 		76FF552E2A41F09F001C500F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76FF552C2A41F09F001C500F /* LaunchScreen.storyboard */; };
 		76FF55372A428D20001C500F /* DayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FF55352A428D20001C500F /* DayTableViewCell.swift */; };
 		76FF55382A428D20001C500F /* DayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76FF55362A428D20001C500F /* DayTableViewCell.xib */; };
-		BB648D65BC4B464D98D6E5DD /* Pods_MemoCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 615C0701912F1643A19DF0EC /* Pods_MemoCalendar.framework */; };
+		EF5741030391602269DA602D /* Pods_MemoCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF26F6B2B9F6FCAC9AAA616B /* Pods_MemoCalendar.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		104D31B7D387A2F880C065F4 /* Pods-MemoCalendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoCalendar.release.xcconfig"; path = "Target Support Files/Pods-MemoCalendar/Pods-MemoCalendar.release.xcconfig"; sourceTree = "<group>"; };
-		615C0701912F1643A19DF0EC /* Pods_MemoCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemoCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		526CE15DB937DE2B2B0CA481 /* Pods-MemoCalendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoCalendar.debug.xcconfig"; path = "Target Support Files/Pods-MemoCalendar/Pods-MemoCalendar.debug.xcconfig"; sourceTree = "<group>"; };
 		762E1F152A51B43500E1DFCC /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		762E1F1B2A51B5B000E1DFCC /* TableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TableViewController.storyboard; sourceTree = "<group>"; };
 		762E1F1D2A526CAE00E1DFCC /* Cell_touch_event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell_touch_event.swift; sourceTree = "<group>"; };
-		762E1F1F2A554C3100E1DFCC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		762EBFC12A700679008882B9 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		762EBFC82A70D616008882B9 /* SerectFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerectFood.swift; sourceTree = "<group>"; };
+		76B1393A2A6D2B0A00B2518E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		76B1393F2A6D371B00B2518E /* Localizable.strings(Japanese) */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Localizable.strings(Japanese)"; sourceTree = "<group>"; };
 		76D57F2E2A4961890090DE94 /* AsaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsaTableViewCell.swift; sourceTree = "<group>"; };
 		76D57F2F2A4961890090DE94 /* AsaTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AsaTableViewCell.xib; sourceTree = "<group>"; };
 		76D57F322A4961CC0090DE94 /* HiruTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiruTableViewCell.swift; sourceTree = "<group>"; };
@@ -66,7 +71,8 @@
 		76FF552F2A41F09F001C500F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		76FF55352A428D20001C500F /* DayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTableViewCell.swift; sourceTree = "<group>"; };
 		76FF55362A428D20001C500F /* DayTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DayTableViewCell.xib; sourceTree = "<group>"; };
-		7F31B03E5666EE86D411CBA1 /* Pods-MemoCalendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoCalendar.debug.xcconfig"; path = "Target Support Files/Pods-MemoCalendar/Pods-MemoCalendar.debug.xcconfig"; sourceTree = "<group>"; };
+		7E60496D47B892E905D0BAC9 /* Pods-MemoCalendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoCalendar.release.xcconfig"; path = "Target Support Files/Pods-MemoCalendar/Pods-MemoCalendar.release.xcconfig"; sourceTree = "<group>"; };
+		CF26F6B2B9F6FCAC9AAA616B /* Pods_MemoCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemoCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,21 +80,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB648D65BC4B464D98D6E5DD /* Pods_MemoCalendar.framework in Frameworks */,
+				EF5741030391602269DA602D /* Pods_MemoCalendar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		26B3DBE1B631728A6766B1EA /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				615C0701912F1643A19DF0EC /* Pods_MemoCalendar.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		762E1F102A4F1B0F00E1DFCC /* MVP */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				76F6E61F2A5956650087C063 /* SearchFood.swift */,
+				762EBFC82A70D616008882B9 /* SerectFood.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -123,6 +122,22 @@
 				76F6E6222A5CF2C90087C063 /* Cell */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		762EBFC02A70065F008882B9 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				762EBFC12A700679008882B9 /* File.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		76B139412A6D373100B2518E /* ja.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				76B1393F2A6D371B00B2518E /* Localizable.strings(Japanese) */,
+			);
+			path = ja.lproj;
 			sourceTree = "<group>";
 		};
 		76D57F2D2A4961590090DE94 /* Cell */ = {
@@ -152,6 +167,7 @@
 		76F6E6222A5CF2C90087C063 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				762EBFC02A70065F008882B9 /* Presenter */,
 				76F6E6232A5CF2F00087C063 /* AddTableViewCell.swift */,
 				76F6E6242A5CF2F00087C063 /* AddTableViewCell.xib */,
 			);
@@ -170,8 +186,6 @@
 		76F6E62E2A6CD00B0087C063 /* SigninVC */ = {
 			isa = PBXGroup;
 			children = (
-				76F6E6312A6CD0430087C063 /* Model */,
-				76F6E6302A6CD0340087C063 /* Presenter */,
 				76F6E62F2A6CD01E0087C063 /* View */,
 			);
 			path = SigninVC;
@@ -186,20 +200,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		76F6E6302A6CD0340087C063 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		76F6E6312A6CD0430087C063 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		76FF55152A41F09C001C500F = {
 			isa = PBXGroup;
 			children = (
@@ -210,7 +210,7 @@
 				76FF55202A41F09C001C500F /* MemoCalendar */,
 				76FF551F2A41F09C001C500F /* Products */,
 				F2AA6116884EBCA9F2718941 /* Pods */,
-				26B3DBE1B631728A6766B1EA /* Frameworks */,
+				C189647BA77D31172803DDF7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -225,23 +225,32 @@
 		76FF55202A41F09C001C500F /* MemoCalendar */ = {
 			isa = PBXGroup;
 			children = (
+				76B139412A6D373100B2518E /* ja.lproj */,
+				76B1393A2A6D2B0A00B2518E /* GoogleService-Info.plist */,
 				76F6E62A2A6520250087C063 /* MemoCalendar.entitlements */,
 				76FF55212A41F09C001C500F /* AppDelegate.swift */,
 				76FF55232A41F09C001C500F /* SceneDelegate.swift */,
 				76FF552A2A41F09F001C500F /* Assets.xcassets */,
 				76FF552C2A41F09F001C500F /* LaunchScreen.storyboard */,
 				76FF552F2A41F09F001C500F /* Info.plist */,
-				762E1F1F2A554C3100E1DFCC /* GoogleService-Info.plist */,
 				76F6E62B2A652BD50087C063 /* MemoCalendarAppCheck.swift */,
 			);
 			path = MemoCalendar;
 			sourceTree = "<group>";
 		};
+		C189647BA77D31172803DDF7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CF26F6B2B9F6FCAC9AAA616B /* Pods_MemoCalendar.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F2AA6116884EBCA9F2718941 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				7F31B03E5666EE86D411CBA1 /* Pods-MemoCalendar.debug.xcconfig */,
-				104D31B7D387A2F880C065F4 /* Pods-MemoCalendar.release.xcconfig */,
+				526CE15DB937DE2B2B0CA481 /* Pods-MemoCalendar.debug.xcconfig */,
+				7E60496D47B892E905D0BAC9 /* Pods-MemoCalendar.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -253,11 +262,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 76FF55322A41F09F001C500F /* Build configuration list for PBXNativeTarget "MemoCalendar" */;
 			buildPhases = (
-				4959DB8D97F60BBF269A2974 /* [CP] Check Pods Manifest.lock */,
+				9EB69F1319F7054289542FD9 /* [CP] Check Pods Manifest.lock */,
 				76FF551A2A41F09C001C500F /* Sources */,
 				76FF551B2A41F09C001C500F /* Frameworks */,
 				76FF551C2A41F09C001C500F /* Resources */,
-				894A6ED8DEAA515B2670D38F /* [CP] Embed Pods Frameworks */,
+				CD1D6F7C7B4AD46F9D954E85 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -307,14 +316,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				76FF552E2A41F09F001C500F /* LaunchScreen.storyboard in Resources */,
+				76B139402A6D371B00B2518E /* Localizable.strings(Japanese) in Resources */,
 				76F6E6262A5CF2F00087C063 /* AddTableViewCell.xib in Resources */,
 				76D57F352A4961CC0090DE94 /* HiruTableViewCell.xib in Resources */,
-				762E1F202A554C3100E1DFCC /* GoogleService-Info.plist in Resources */,
 				76FF552B2A41F09F001C500F /* Assets.xcassets in Resources */,
 				76FF55382A428D20001C500F /* DayTableViewCell.xib in Resources */,
 				76FF55292A41F09C001C500F /* Main.storyboard in Resources */,
 				76F6E6372A6CD7FF0087C063 /* SigninViewController.storyboard in Resources */,
 				762E1F1C2A51B5B000E1DFCC /* TableViewController.storyboard in Resources */,
+				76B1393B2A6D2B0B00B2518E /* GoogleService-Info.plist in Resources */,
 				76D57F312A4961890090DE94 /* AsaTableViewCell.xib in Resources */,
 				76D57F392A4961E70090DE94 /* YoruTableViewCell.xib in Resources */,
 			);
@@ -323,7 +333,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4959DB8D97F60BBF269A2974 /* [CP] Check Pods Manifest.lock */ = {
+		9EB69F1319F7054289542FD9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -345,7 +355,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		894A6ED8DEAA515B2670D38F /* [CP] Embed Pods Frameworks */ = {
+		CD1D6F7C7B4AD46F9D954E85 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -378,7 +388,9 @@
 				76D57F342A4961CC0090DE94 /* HiruTableViewCell.swift in Sources */,
 				76F6E62C2A652BD50087C063 /* MemoCalendarAppCheck.swift in Sources */,
 				76F6E6292A5CF4F00087C063 /* SearchFoodPresenter.swift in Sources */,
+				762EBFC92A70D616008882B9 /* SerectFood.swift in Sources */,
 				76F6E6202A5956650087C063 /* SearchFood.swift in Sources */,
+				762EBFC22A700679008882B9 /* File.swift in Sources */,
 				76D57F382A4961E70090DE94 /* YoruTableViewCell.swift in Sources */,
 				76D57F302A4961890090DE94 /* AsaTableViewCell.swift in Sources */,
 				762E1F1E2A526CAE00E1DFCC /* Cell_touch_event.swift in Sources */,
@@ -524,11 +536,12 @@
 		};
 		76FF55332A41F09F001C500F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7F31B03E5666EE86D411CBA1 /* Pods-MemoCalendar.debug.xcconfig */;
+			baseConfigurationReference = 526CE15DB937DE2B2B0CA481 /* Pods-MemoCalendar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = MemoCalendar/MemoCalendar.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 58ZU762N3F;
@@ -536,8 +549,9 @@
 				INFOPLIST_FILE = MemoCalendar/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = SigninViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -545,19 +559,24 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = fuji3.example.MemoCalendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		76FF55342A41F09F001C500F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 104D31B7D387A2F880C065F4 /* Pods-MemoCalendar.release.xcconfig */;
+			baseConfigurationReference = 7E60496D47B892E905D0BAC9 /* Pods-MemoCalendar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = MemoCalendar/MemoCalendar.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 58ZU762N3F;
@@ -565,8 +584,9 @@
 				INFOPLIST_FILE = MemoCalendar/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = SigninViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -574,9 +594,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = fuji3.example.MemoCalendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

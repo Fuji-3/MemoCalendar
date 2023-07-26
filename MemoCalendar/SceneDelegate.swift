@@ -39,12 +39,33 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneWillEnterForeground(_ scene: UIScene) {
         // Called as the scene transitions from the background to the foreground.
         // Use this method to undo the changes made on entering the background.
+        print("WillEnterForeground")
+        let userDefault = UserDefaults.standard.value(forKey: "email")
+        print(userDefault.debugDescription)
+        
+        if userDefault != nil  {
+            print("Login 画面")
+            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let rootViewVontroller = storyboard.instantiateViewController(withIdentifier: "MainVC")
+            if let navigationController = self.window?.rootViewController as? UINavigationController {
+                navigationController.pushViewController(rootViewVontroller, animated: true)
+            }
+            
+        }else{
+            print("新規画面")
+            let storyboard = UIStoryboard(name: "SigninViewController", bundle: Bundle.main)
+            let rootViewVontroller = storyboard.instantiateViewController(withIdentifier: "SiginVC")
+            self.window?.rootViewController = rootViewVontroller
+            self.window?.makeKeyAndVisible()
+        }
+
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+        
     }
 
 

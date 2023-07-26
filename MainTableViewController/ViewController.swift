@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.topItem?.hidesBackButton = true
         
         self.calendar.delegate = self
         self.calendar.scope = .week
@@ -34,6 +36,7 @@ class ViewController: UIViewController {
         self.getFirebase()
         
     }
+
     
     //test firebase
     func getFirebase(){
@@ -45,20 +48,18 @@ class ViewController: UIViewController {
                 print("key:\(key),value:\(value)")
             }
         }
-        /*
-         //読み込み１回目
-            if let dic = snapshot?.value as? [String:AnyObject]{
-                print("Data[\(dic)]")
-                }
-             */
     }
+
+}
+//FSCalendar関連処理
+extension ViewController {
+    
     func todayFormatter(today_date:Date)->String{
         let df = DateFormatter()
         df.locale = Locale(identifier: "ja_JP")
         df.dateFormat = "M月dd日"
         return df.string(from: today_date)
     }
-    
     
     //祝日判定を行い結果を返すメソッド(True:祝日)
     func redDay(_ date:Date) -> Bool {

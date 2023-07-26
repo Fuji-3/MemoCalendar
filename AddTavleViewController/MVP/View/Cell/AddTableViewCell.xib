@@ -62,7 +62,7 @@
                 <outlet property="syouhine_label" destination="eGZ-Sz-sKL" id="iJZ-5l-kCF"/>
                 <outlet property="syouhine_value" destination="Jjo-7d-3cZ" id="jVO-wn-15v"/>
             </connections>
-            <point key="canvasLocation" x="7.6335877862595414" y="4.9295774647887329"/>
+            <point key="canvasLocation" x="-287" y="25"/>
         </tableViewCell>
     </objects>
     <resources>

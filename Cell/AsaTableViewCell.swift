@@ -4,13 +4,15 @@
 //
 //  Created by Fuji3 on 2023/06/26.
 //
-protocol CellButtonTapProtocol{
+public protocol CellButtonTapProtocol{
     func AddButonTap(identifier:String,nib:UINib)
 }
 import UIKit
 
 class AsaTableViewCell: UITableViewCell {
     var delegate:CellButtonTapProtocol?
+    
+    @IBOutlet weak var kcalLabel: UILabel!
     
     static var  identifier:String {
         String(describing: self)

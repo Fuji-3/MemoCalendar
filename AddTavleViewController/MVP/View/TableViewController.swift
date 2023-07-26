@@ -29,6 +29,7 @@ class TableViewController: UIViewController {
         
         self.addDataTableView.register(AddTableViewCell.nib, forCellReuseIdentifier: AddTableViewCell.identifier)
         
+        
     }
     
     @IBAction func buttonDismis(_ sender: UIBarButtonItem) {
@@ -69,7 +70,9 @@ extension TableViewController:SearchFood_presenter_output{
 }
 
 extension TableViewController:UITableViewDelegate{
-    
+    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
 }
 extension TableViewController:UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -81,6 +84,7 @@ extension TableViewController:UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: AddTableViewCell.identifier, for: indexPath) as! AddTableViewCell
+        cell.delegate = self
         let data = self.searchFood_presenter.cellForText(row: indexPath.row)
         
         if let label:String = data["name"] as? String{
@@ -94,6 +98,19 @@ extension TableViewController:UITableViewDataSource{
         
         return cell
     }
+    
+}
+extension TableViewController:AddCellButton{
+    func addCellFood(cell: AddTableViewCell) {
+        if let indexPath = addDataTableView.indexPath(for: cell){
+            let data = self.searchFood_presenter.cellForText(row: indexPath.row)
+            
+            self.searchFood_presenter.serectFoodData(data: data, day: self.navigationItem.title.debugDescription)
+            
+        }
+    }
+    
+    
     
     
 }

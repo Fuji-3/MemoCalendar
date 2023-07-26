@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  MemoCalendar
+
+  Created by Fuji3 on 2023/07/23.
+  
+*/
+// Japanese
+"sign_in" = "ログイン";
+"email" = "メールアドレス";
+"password" = "パスワード";
+// 他のテキストやメッセージも同様にローカライズする
