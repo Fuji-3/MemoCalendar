@@ -32,15 +32,13 @@ class SigninViewController: UIViewController,FUIAuthDelegate {
                         print("メールアドレスが間違ってます")
                     case "There is no user record corresponding to this identifier. The user may have been deleted.":
                         print("該当するユーザーがありません")
-                    default:
-                        break
+                    default:break
                 }
             }else{
                 if let user = result?.user{
-                    //print("ログインした: \(user.uid):\(user.email)")
                     userDefaults = UserDefaults.standard
                     userDefaults.set(["uid":user.uid,"email":user.email], forKey: "id")
-                    //ここで遷移
+                    
                     let stroyboad:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                     let vc = stroyboad.instantiateViewController(withIdentifier: "MainVC") as! ViewController
                     let nav = UINavigationController(rootViewController: vc)
@@ -48,10 +46,6 @@ class SigninViewController: UIViewController,FUIAuthDelegate {
                     self.present(nav, animated: true)
                 }
             }
-            
-            
-            
-            
         }
     }
     @IBAction func AddButton(_ sender: UIButton) {
@@ -68,28 +62,6 @@ class SigninViewController: UIViewController,FUIAuthDelegate {
         let authViewController = authUI?.authViewController()
         present(authViewController!, animated: true,completion:  nil)
         
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        /*if (userDefaults.string(forKey: "usiD") != nil) {
-            print("ログイン済み2")
-            let alert = UIAlertController(title: "", message: "ログイン済2", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: .default){ (aciton) in
-                
-            }
-            let cansetAction = UIAlertAction(title: "戻る", style: .cancel){(cancel) in
-                
-            }
-            alert.addAction(okAction)
-            alert.addAction(cansetAction)
-            present(alert, animated: true)
-        }else{
-            print("ログインしていない")
-        }*/
     }
     
     //成功 or 失敗で呼ばれる

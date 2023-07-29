@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.topItem?.hidesBackButton = true
         
@@ -29,52 +30,29 @@ class ViewController: UIViewController {
         
         self.dayTableView.delegate = self
         self.dayTableView.dataSource = self
-        self.view_presenter_input = ViewPresenter(view: self)
         
-        //self.dayTableView.register(DayTableViewCell.nib, forCellReuseIdentifier: DayTableViewCell.identifier)
+        self.view_presenter_input = ViewPresenter(view: self)
+       
         self.dayTableView.register(AsaTableViewCell.nib, forCellReuseIdentifier: AsaTableViewCell.identifier)
         self.dayTableView.register(HiruTableViewCell.nib, forCellReuseIdentifier: HiruTableViewCell.identifier)
         self.dayTableView.register(YoruTableViewCell.nib, forCellReuseIdentifier: YoruTableViewCell.identifier)
-        self.dayTableView.register(AddTableViewCell.nib, forCellReuseIdentifier: AddTableViewCell.identifier)
+        self.dayTableView.register(SerectDataTableViewCell.nib, forCellReuseIdentifier: SerectDataTableViewCell.identifier)
         
         self.dayTableView.rowHeight = 50
-        //self.getFirebase()
         let time =  todayFormatter(today_date: self.calendar.today!)
         self.get_serectDB(time: time)
     }
-    //ViewControllerのViewが画面に表示される直前に呼ばれます
-    override func viewWillAppear(_ animated: Bool) {
-        print("viewWillAppeat")
-        super.viewWillAppear(animated)
-    }
-    //ViewControllerのViewが画面に表示された後に呼ばれます
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        //self.dayTableView.reloadData()
-    }
-    
+    //serectDBに読み取り
     private func get_serectDB(time:String){
         self.view_presenter_input.get_TableData(time: time, time_zone: " 朝")
         self.view_presenter_input.get_TableData(time: time, time_zone: " 昼")
         self.view_presenter_input.get_TableData(time: time, time_zone: " 夜")
     }
-    
-    //test firebase
-    func getFirebase(){
-        let ref:DatabaseReference! = Database.database().reference()
-        let today = "7月10日"
-        ref.child("TuhuuMemoDB/"+today).observeSingleEvent(of: .value) { snapshot in
-            guard let values = snapshot.value as? [String:Any] else {return}
-            values.forEach { (key,value) in
-                //print("key:\(key),value:\(value)")
-            }
-        }
-    }
-
 }
+
 //FSCalendar関連処理
 extension ViewController {
-    
+    //日付をフォーマット
     func todayFormatter(today_date:Date)->String{
         let df = DateFormatter()
         df.locale = Locale(identifier: "ja_JP")
@@ -84,14 +62,11 @@ extension ViewController {
     
     //祝日判定を行い結果を返すメソッド(True:祝日)
     func redDay(_ date:Date) -> Bool {
-        //祝日判定用のカレンダークラスのインスタンス
         let tmpCalendar = Calendar(identifier: .gregorian)
-        // 祝日判定を行う日にちの年、月、日を取得
         let year = tmpCalendar.component(.year, from: date)
         let month = tmpCalendar.component(.month, from: date)
         let day = tmpCalendar.component(.day, from: date)
 
-        // CalculateCalendarLogic()：祝日判定のインスタンスの生成
         let holiday = CalculateCalendarLogic()
         return holiday.judgeJapaneseHoliday(year: year, month: month, day: day)
     }
@@ -129,8 +104,8 @@ extension ViewController:FSCalendarDelegateAppearance{
         }
         return nil
     }
+    
     func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
-        //self.calendar.frame = CGRect(origin: calendar.frame.origin , size: bounds.size)
         self.calendarHeight.constant = bounds.height
         self.view.layoutIfNeeded()
     }
@@ -157,7 +132,6 @@ extension ViewController:UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //print("numberOfRowsInSection:\(self.view_presenter_input.numberOfRowsInSection(seciton: section))")
         return self.view_presenter_input.numberOfRowsInSection(seciton: section)
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -170,11 +144,12 @@ extension ViewController:UITableViewDataSource{
         }
         
         if indexPath.section == 0 && indexPath.row <= self.view_presenter_input.get_AsaCellText.count {
-            let cell = tableView.dequeueReusableCell(withIdentifier: AddTableViewCell.identifier, for: indexPath) as! AddTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: SerectDataTableViewCell.identifier, for: indexPath) as! SerectDataTableViewCell
             let data = self.view_presenter_input.get_AsaCellText[indexPath.row - 1]
             
-            cell.syouhine_label.text = data["name"] as? String ?? "Name"
-            cell.syouhine_value.text = data["kcal"] as? String ?? "0"
+            
+            cell.serect_name.text = data["name"] as? String ?? "Name"
+            cell.serect_value.text = data["kcal"] as? String ?? "0"
             return cell
         }
         
@@ -183,13 +158,11 @@ extension ViewController:UITableViewDataSource{
                 cell.delegate = self
             return cell
         }
-        //print("section:\(indexPath.section):\(indexPath.row)")
         if indexPath.section == 1 && indexPath.row <= self.view_presenter_input.get_HiruCellText.count {
-            //print("section:\(indexPath.section),\(indexPath.row)")
-            let cell = tableView.dequeueReusableCell(withIdentifier: AddTableViewCell.identifier, for: indexPath) as! AddTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: SerectDataTableViewCell.identifier, for: indexPath) as! SerectDataTableViewCell
             let data = self.view_presenter_input.get_HiruCellText[indexPath.row - 1]
-            cell.syouhine_label.text = data["name"] as? String ?? "Name"
-            cell.syouhine_value.text = data["kcal"] as? String ?? "0"
+            cell.serect_name.text = data["name"] as? String ?? "Name"
+            cell.serect_value.text = data["kcal"] as? String ?? "0"
             return cell
         }
         if indexPath.section == 2 &&  indexPath.row == 0{
@@ -199,10 +172,10 @@ extension ViewController:UITableViewDataSource{
         }
         if indexPath.section == 2 && indexPath.row <= self.view_presenter_input.get_YoruCellText.count {
             //print("section:\(indexPath.section),\(indexPath.row)")
-            let cell = tableView.dequeueReusableCell(withIdentifier: AddTableViewCell.identifier, for: indexPath) as! AddTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: SerectDataTableViewCell.identifier, for: indexPath) as! SerectDataTableViewCell
             let data = self.view_presenter_input.get_YoruCellText[indexPath.row - 1]
-            cell.syouhine_label.text = data["name"] as? String ?? "Name"
-            cell.syouhine_value.text = data["kcal"] as? String ?? "0"
+            cell.serect_name.text = data["name"] as? String ?? "Name"
+            cell.serect_value.text = data["kcal"] as? String ?? "0"
             
             return cell
         }
@@ -240,15 +213,5 @@ extension ViewController:CellButtonTapProtocol{
 extension ViewController:View_Presenter_output{
     func dataFethCompleted(time_zone: String) {
         self.dayTableView.reloadData()
-        /*switch time_zone{
-                
-            case " 朝":self.dayTableView.reloadData()
-            case " 昼":self.dayTableView.reloadData()
-            case " 夜":self.dayTableView.reloadData()
-            default:break
-        }*/
-    
     }
-    
-    
 }
