@@ -37,10 +37,9 @@ class SigninViewController: UIViewController,FUIAuthDelegate {
                 }
             }else{
                 if let user = result?.user{
-                    print("ログインした: \(user.uid):\(user.email)")
-                                        
+                    //print("ログインした: \(user.uid):\(user.email)")
                     userDefaults = UserDefaults.standard
-                    userDefaults.set(user.email, forKey: "email")
+                    userDefaults.set(["uid":user.uid,"email":user.email], forKey: "id")
                     //ここで遷移
                     let stroyboad:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                     let vc = stroyboad.instantiateViewController(withIdentifier: "MainVC") as! ViewController
@@ -101,7 +100,6 @@ class SigninViewController: UIViewController,FUIAuthDelegate {
             let userDefaults = UserDefaults.standard
             userDefaults.register(defaults: [user.email.debugDescription :user.uid])
             
-
         }else{
             if let error = error {
                 print("新規登録をキャンセルしました")

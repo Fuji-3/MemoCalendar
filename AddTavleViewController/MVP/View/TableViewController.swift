@@ -16,6 +16,7 @@ class TableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.indicator_config()
         
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
@@ -23,13 +24,16 @@ class TableViewController: UIViewController {
         
         self.searchFoot_searchBar.delegate = self
         self.searchFood_presenter = SearchFood_Presenter(view: self)
+        self.searchFood_presenter.get_serectFoodDB(vc: self)
         
         self.addDataTableView.delegate = self
         self.addDataTableView.dataSource = self
         
         self.addDataTableView.register(AddTableViewCell.nib, forCellReuseIdentifier: AddTableViewCell.identifier)
+    }
+    override func viewWillAppear(_ animated: Bool) {
         
-        
+        self.addDataTableView.reloadData()
     }
     
     @IBAction func buttonDismis(_ sender: UIBarButtonItem) {
@@ -63,10 +67,20 @@ extension TableViewController:UISearchBarDelegate{
     }
 }
 extension TableViewController:SearchFood_presenter_output{
+    func event_alet(text: String) {
+        let alertController = UIAlertController(title: "", message: text, preferredStyle: .actionSheet)
+        let okAction = UIAlertAction(title: "OK", style: .default){(_) in
+            
+        }
+        alertController.addAction(okAction)
+        present(alertController, animated: true)
+    }
+    
     func output_serathData(data: [String : Any]) {
         self.searchButton_Indicator.stopAnimating()
         self.addDataTableView.reloadData()
     }
+    
 }
 
 extension TableViewController:UITableViewDelegate{
@@ -104,8 +118,7 @@ extension TableViewController:AddCellButton{
     func addCellFood(cell: AddTableViewCell) {
         if let indexPath = addDataTableView.indexPath(for: cell){
             let data = self.searchFood_presenter.cellForText(row: indexPath.row)
-            
-            self.searchFood_presenter.serectFoodData(data: data, day: self.navigationItem.title.debugDescription)
+            self.searchFood_presenter.serectFoodData(data: data, day: self.navigationItem.title!.description)
             
         }
     }

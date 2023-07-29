@@ -30,6 +30,7 @@ class YoruTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     @IBAction func AddButton(_ sender: UIButton) {
+        delegate?.AddButonTap(identifier: Self.identifier, nib: Self.nib)
     }
     
 }

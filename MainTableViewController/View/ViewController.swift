@@ -16,27 +16,48 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var dayTableView: UITableView!
     
+    var view_presenter_input:View_Presenter_input!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.topItem?.hidesBackButton = true
         
         self.calendar.delegate = self
+        self.calendar.dataSource = self
         self.calendar.scope = .week
         
         self.dayTableView.delegate = self
         self.dayTableView.dataSource = self
-    
+        self.view_presenter_input = ViewPresenter(view: self)
+        
         //self.dayTableView.register(DayTableViewCell.nib, forCellReuseIdentifier: DayTableViewCell.identifier)
         self.dayTableView.register(AsaTableViewCell.nib, forCellReuseIdentifier: AsaTableViewCell.identifier)
         self.dayTableView.register(HiruTableViewCell.nib, forCellReuseIdentifier: HiruTableViewCell.identifier)
         self.dayTableView.register(YoruTableViewCell.nib, forCellReuseIdentifier: YoruTableViewCell.identifier)
+        self.dayTableView.register(AddTableViewCell.nib, forCellReuseIdentifier: AddTableViewCell.identifier)
         
         self.dayTableView.rowHeight = 50
-        self.getFirebase()
-        
+        //self.getFirebase()
+        let time =  todayFormatter(today_date: self.calendar.today!)
+        self.get_serectDB(time: time)
     }
-
+    //ViewControllerのViewが画面に表示される直前に呼ばれます
+    override func viewWillAppear(_ animated: Bool) {
+        print("viewWillAppeat")
+        super.viewWillAppear(animated)
+    }
+    //ViewControllerのViewが画面に表示された後に呼ばれます
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        //self.dayTableView.reloadData()
+    }
+    
+    private func get_serectDB(time:String){
+        self.view_presenter_input.get_TableData(time: time, time_zone: " 朝")
+        self.view_presenter_input.get_TableData(time: time, time_zone: " 昼")
+        self.view_presenter_input.get_TableData(time: time, time_zone: " 夜")
+    }
     
     //test firebase
     func getFirebase(){
@@ -45,7 +66,7 @@ class ViewController: UIViewController {
         ref.child("TuhuuMemoDB/"+today).observeSingleEvent(of: .value) { snapshot in
             guard let values = snapshot.value as? [String:Any] else {return}
             values.forEach { (key,value) in
-                print("key:\(key),value:\(value)")
+                //print("key:\(key),value:\(value)")
             }
         }
     }
@@ -91,7 +112,6 @@ extension ViewController {
     }
     
 }
-
 extension ViewController:FSCalendarDelegateAppearance{
     // 土日や祝日の日の文字色を変える
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, titleDefaultColorFor date: Date) -> UIColor? {
@@ -115,7 +135,11 @@ extension ViewController:FSCalendarDelegateAppearance{
         self.view.layoutIfNeeded()
     }
 }
-
+extension ViewController:FSCalendarDataSource{
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        self.get_serectDB(time: self.todayFormatter(today_date: date))
+    }
+}
 extension ViewController:UITableViewDelegate{
     func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
         return false
@@ -133,33 +157,54 @@ extension ViewController:UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        //print("numberOfRowsInSection:\(self.view_presenter_input.numberOfRowsInSection(seciton: section))")
+        return self.view_presenter_input.numberOfRowsInSection(seciton: section)
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        switch indexPath {
-        case [0,0]:
+        
+        if indexPath.section == 0 &&  indexPath.row == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: AsaTableViewCell.identifier, for: indexPath) as! AsaTableViewCell
-            cell.delegate = self
+                cell.delegate = self
             return cell
-        /*case [0,1]:
-            let cell = tableView.dequeueReusableCell(withIdentifier: DayTableViewCell.identifier, for: indexPath) as! DayTableViewCell
-            return cell*/
-        case [1,0]:
+        }
+        
+        if indexPath.section == 0 && indexPath.row <= self.view_presenter_input.get_AsaCellText.count {
+            let cell = tableView.dequeueReusableCell(withIdentifier: AddTableViewCell.identifier, for: indexPath) as! AddTableViewCell
+            let data = self.view_presenter_input.get_AsaCellText[indexPath.row - 1]
+            
+            cell.syouhine_label.text = data["name"] as? String ?? "Name"
+            cell.syouhine_value.text = data["kcal"] as? String ?? "0"
+            return cell
+        }
+        
+        if indexPath.section == 1 &&  indexPath.row == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: HiruTableViewCell.identifier, for: indexPath) as! HiruTableViewCell
+                cell.delegate = self
             return cell
-        /*case [1,1]:
-            let cell = tableView.dequeueReusableCell(withIdentifier: DayTableViewCell.identifier, for: indexPath) as! DayTableViewCell
-            return cell*/
-        case [2,0]:
+        }
+        //print("section:\(indexPath.section):\(indexPath.row)")
+        if indexPath.section == 1 && indexPath.row <= self.view_presenter_input.get_HiruCellText.count {
+            //print("section:\(indexPath.section),\(indexPath.row)")
+            let cell = tableView.dequeueReusableCell(withIdentifier: AddTableViewCell.identifier, for: indexPath) as! AddTableViewCell
+            let data = self.view_presenter_input.get_HiruCellText[indexPath.row - 1]
+            cell.syouhine_label.text = data["name"] as? String ?? "Name"
+            cell.syouhine_value.text = data["kcal"] as? String ?? "0"
+            return cell
+        }
+        if indexPath.section == 2 &&  indexPath.row == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: YoruTableViewCell.identifier, for: indexPath) as! YoruTableViewCell
+                cell.delegate = self
             return cell
-        /*case [2,1]:
-            let cell = tableView.dequeueReusableCell(withIdentifier: DayTableViewCell.identifier, for: indexPath) as! DayTableViewCell
-            return cell*/
-        default:
-            break
+        }
+        if indexPath.section == 2 && indexPath.row <= self.view_presenter_input.get_YoruCellText.count {
+            //print("section:\(indexPath.section),\(indexPath.row)")
+            let cell = tableView.dequeueReusableCell(withIdentifier: AddTableViewCell.identifier, for: indexPath) as! AddTableViewCell
+            let data = self.view_presenter_input.get_YoruCellText[indexPath.row - 1]
+            cell.syouhine_label.text = data["name"] as? String ?? "Name"
+            cell.syouhine_value.text = data["kcal"] as? String ?? "0"
+            
+            return cell
         }
         return cell
     }
@@ -192,3 +237,18 @@ extension ViewController:CellButtonTapProtocol{
     
 }
 
+extension ViewController:View_Presenter_output{
+    func dataFethCompleted(time_zone: String) {
+        self.dayTableView.reloadData()
+        /*switch time_zone{
+                
+            case " 朝":self.dayTableView.reloadData()
+            case " 昼":self.dayTableView.reloadData()
+            case " 夜":self.dayTableView.reloadData()
+            default:break
+        }*/
+    
+    }
+    
+    
+}

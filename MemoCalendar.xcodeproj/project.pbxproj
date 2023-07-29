@@ -10,8 +10,11 @@
 		762E1F172A51B43500E1DFCC /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762E1F152A51B43500E1DFCC /* TableViewController.swift */; };
 		762E1F1C2A51B5B000E1DFCC /* TableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 762E1F1B2A51B5B000E1DFCC /* TableViewController.storyboard */; };
 		762E1F1E2A526CAE00E1DFCC /* Cell_touch_event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762E1F1D2A526CAE00E1DFCC /* Cell_touch_event.swift */; };
-		762EBFC22A700679008882B9 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762EBFC12A700679008882B9 /* File.swift */; };
 		762EBFC92A70D616008882B9 /* SerectFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762EBFC82A70D616008882B9 /* SerectFood.swift */; };
+		762EBFCD2A71455A008882B9 /* ViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762EBFCC2A71455A008882B9 /* ViewPresenter.swift */; };
+		762EBFCF2A71456D008882B9 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762EBFCE2A71456D008882B9 /* ViewModel.swift */; };
+		762EBFD42A72CDF7008882B9 /* SerectDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762EBFD22A72CDF7008882B9 /* SerectDataTableViewCell.swift */; };
+		762EBFD52A72CDF7008882B9 /* SerectDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 762EBFD32A72CDF7008882B9 /* SerectDataTableViewCell.xib */; };
 		76B1393B2A6D2B0B00B2518E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 76B1393A2A6D2B0A00B2518E /* GoogleService-Info.plist */; };
 		76B139402A6D371B00B2518E /* Localizable.strings(Japanese) in Resources */ = {isa = PBXBuildFile; fileRef = 76B1393F2A6D371B00B2518E /* Localizable.strings(Japanese) */; };
 		76D57F302A4961890090DE94 /* AsaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D57F2E2A4961890090DE94 /* AsaTableViewCell.swift */; };
@@ -43,8 +46,11 @@
 		762E1F152A51B43500E1DFCC /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		762E1F1B2A51B5B000E1DFCC /* TableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TableViewController.storyboard; sourceTree = "<group>"; };
 		762E1F1D2A526CAE00E1DFCC /* Cell_touch_event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell_touch_event.swift; sourceTree = "<group>"; };
-		762EBFC12A700679008882B9 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		762EBFC82A70D616008882B9 /* SerectFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerectFood.swift; sourceTree = "<group>"; };
+		762EBFCC2A71455A008882B9 /* ViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPresenter.swift; sourceTree = "<group>"; };
+		762EBFCE2A71456D008882B9 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		762EBFD22A72CDF7008882B9 /* SerectDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerectDataTableViewCell.swift; sourceTree = "<group>"; };
+		762EBFD32A72CDF7008882B9 /* SerectDataTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SerectDataTableViewCell.xib; sourceTree = "<group>"; };
 		76B1393A2A6D2B0A00B2518E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		76B1393F2A6D371B00B2518E /* Localizable.strings(Japanese) */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Localizable.strings(Japanese)"; sourceTree = "<group>"; };
 		76D57F2E2A4961890090DE94 /* AsaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsaTableViewCell.swift; sourceTree = "<group>"; };
@@ -124,12 +130,30 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		762EBFC02A70065F008882B9 /* Presenter */ = {
+		762EBFCA2A714532008882B9 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				762EBFC12A700679008882B9 /* File.swift */,
+				762EBFCC2A71455A008882B9 /* ViewPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		762EBFCB2A714541008882B9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				762EBFCE2A71456D008882B9 /* ViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		762EBFD02A716EAE008882B9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				76D57F2D2A4961590090DE94 /* Cell */,
+				76FF55272A41F09C001C500F /* Main.storyboard */,
+				76FF55252A41F09C001C500F /* ViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		76B139412A6D373100B2518E /* ja.lproj */ = {
@@ -152,6 +176,8 @@
 				76D57F362A4961E70090DE94 /* YoruTableViewCell.swift */,
 				76D57F372A4961E70090DE94 /* YoruTableViewCell.xib */,
 				762E1F1D2A526CAE00E1DFCC /* Cell_touch_event.swift */,
+				762EBFD22A72CDF7008882B9 /* SerectDataTableViewCell.swift */,
+				762EBFD32A72CDF7008882B9 /* SerectDataTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -167,7 +193,6 @@
 		76F6E6222A5CF2C90087C063 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				762EBFC02A70065F008882B9 /* Presenter */,
 				76F6E6232A5CF2F00087C063 /* AddTableViewCell.swift */,
 				76F6E6242A5CF2F00087C063 /* AddTableViewCell.xib */,
 			);
@@ -177,8 +202,9 @@
 		76F6E6272A5CF3650087C063 /* MainTableViewController */ = {
 			isa = PBXGroup;
 			children = (
-				76FF55272A41F09C001C500F /* Main.storyboard */,
-				76FF55252A41F09C001C500F /* ViewController.swift */,
+				762EBFD02A716EAE008882B9 /* View */,
+				762EBFCB2A714541008882B9 /* Model */,
+				762EBFCA2A714532008882B9 /* Presenter */,
 			);
 			path = MainTableViewController;
 			sourceTree = "<group>";
@@ -206,7 +232,6 @@
 				76F6E62E2A6CD00B0087C063 /* SigninVC */,
 				76F6E6272A5CF3650087C063 /* MainTableViewController */,
 				76F6E6212A5CF2130087C063 /* AddTavleViewController */,
-				76D57F2D2A4961590090DE94 /* Cell */,
 				76FF55202A41F09C001C500F /* MemoCalendar */,
 				76FF551F2A41F09C001C500F /* Products */,
 				F2AA6116884EBCA9F2718941 /* Pods */,
@@ -317,6 +342,7 @@
 			files = (
 				76FF552E2A41F09F001C500F /* LaunchScreen.storyboard in Resources */,
 				76B139402A6D371B00B2518E /* Localizable.strings(Japanese) in Resources */,
+				762EBFD52A72CDF7008882B9 /* SerectDataTableViewCell.xib in Resources */,
 				76F6E6262A5CF2F00087C063 /* AddTableViewCell.xib in Resources */,
 				76D57F352A4961CC0090DE94 /* HiruTableViewCell.xib in Resources */,
 				76FF552B2A41F09F001C500F /* Assets.xcassets in Resources */,
@@ -383,16 +409,18 @@
 				76FF55262A41F09C001C500F /* ViewController.swift in Sources */,
 				76F6E6252A5CF2F00087C063 /* AddTableViewCell.swift in Sources */,
 				76FF55222A41F09C001C500F /* AppDelegate.swift in Sources */,
+				762EBFCD2A71455A008882B9 /* ViewPresenter.swift in Sources */,
 				76FF55372A428D20001C500F /* DayTableViewCell.swift in Sources */,
 				762E1F172A51B43500E1DFCC /* TableViewController.swift in Sources */,
 				76D57F342A4961CC0090DE94 /* HiruTableViewCell.swift in Sources */,
 				76F6E62C2A652BD50087C063 /* MemoCalendarAppCheck.swift in Sources */,
 				76F6E6292A5CF4F00087C063 /* SearchFoodPresenter.swift in Sources */,
+				762EBFCF2A71456D008882B9 /* ViewModel.swift in Sources */,
 				762EBFC92A70D616008882B9 /* SerectFood.swift in Sources */,
 				76F6E6202A5956650087C063 /* SearchFood.swift in Sources */,
-				762EBFC22A700679008882B9 /* File.swift in Sources */,
 				76D57F382A4961E70090DE94 /* YoruTableViewCell.swift in Sources */,
 				76D57F302A4961890090DE94 /* AsaTableViewCell.swift in Sources */,
+				762EBFD42A72CDF7008882B9 /* SerectDataTableViewCell.swift in Sources */,
 				762E1F1E2A526CAE00E1DFCC /* Cell_touch_event.swift in Sources */,
 				76FF55242A41F09C001C500F /* SceneDelegate.swift in Sources */,
 			);
@@ -549,7 +577,6 @@
 				INFOPLIST_FILE = MemoCalendar/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = SigninViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -584,7 +611,6 @@
 				INFOPLIST_FILE = MemoCalendar/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = SigninViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (

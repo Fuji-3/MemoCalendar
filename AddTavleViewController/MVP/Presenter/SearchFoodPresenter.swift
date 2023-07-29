@@ -6,16 +6,22 @@
 //
 
 import Foundation
+//ViewからPresenterに処理そ委託
 protocol SearchFood_presenter_input:AnyObject{
     var numberOfFood_Data:Int{get}
     func serathBarText(text: String)
     func cellForText(row: Int)->[String:Any]
+    
     func serectFoodData(data:[String:Any],day:String)
+    func get_serectFoodDB(vc: TableViewController)
+    
+    
 }
+//PresenterからViewに委託
 protocol SearchFood_presenter_output:AnyObject{
     func output_serathData(data: [String:Any])
+    func event_alet(text:String)
 }
-
 
 class SearchFood_Presenter {
     private var food_data = [String:Any]()
@@ -28,6 +34,11 @@ class SearchFood_Presenter {
         self.view = view
         self.model = SearchFood_model()
     }
+}
+
+//Presenter内部処理
+extension SearchFood_Presenter{
+
     //DBからのデータをフォーマットする
     func searchFoodDB_Format(data:[String:[String:Any]],text:String)->[String:Any]{
         var search_data = [String:Any]()
@@ -46,16 +57,47 @@ class SearchFood_Presenter {
             }
         }
         return search_data
-        
     }
     
 }
+
 extension SearchFood_Presenter:SearchFood_presenter_input {
-    //検索一覧から登録ボタンが押された処理
-    func serectFoodData(data: [String : Any], day: String) {
-        
+
+    func get_serectFoodDB(vc: TableViewController) {
+        let userDefaults = UserDefaults.standard.dictionary(forKey: "id")
+        let uid = userDefaults!["uid"]
+        let day = vc.navigationItem.title
+        self.model.get_serctFoodDB(day: day ?? "", uid: uid as! String) { result in
+            DispatchQueue.main.async {
+                switch result {
+                    case.success(let data):
+                        print("data:\(data)")
+                    case.failure(let error): break
+                }
+            }
+        }
+
     }
     
+    //検索一覧から登録ボタンが押された処理
+    func serectFoodData(data: [String : Any], day: String) {
+        let userDefaults = UserDefaults.standard.dictionary(forKey: "id")
+        if let str = userDefaults!["uid"] {
+            self.model.set_serctFoodDB(data: data, day: day, uid:str as! String ) { result in
+                DispatchQueue.main.async {
+                    switch result {
+                        case .success(let str):
+                            print("str:\(str)")
+                            self.view?.event_alet(text: str)
+                        case.failure(let error):
+                            print("error:\(error)")
+                    }
+                }
+            }
+        }
+    }
+    
+    //Cellからのタップ
     func cellForText(row: Int) -> [String:Any]{
         let keys = Array(food_data.keys).sorted()
         
@@ -69,7 +111,8 @@ extension SearchFood_Presenter:SearchFood_presenter_input {
     var numberOfFood_Data: Int {
         return self.food_data.count
     }
-    //データ読み取り
+    
+    //textFileを元にフードデータを読み取り
     func serathBarText(text: String) {
         print("text:\(text)")
         self.model.get_searchFoodDB(foodName: text) { result in
