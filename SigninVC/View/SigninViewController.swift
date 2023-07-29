@@ -73,7 +73,7 @@ class SigninViewController: UIViewController,FUIAuthDelegate {
             userDefaults.register(defaults: [user.email.debugDescription :user.uid])
             
         }else{
-            if let error = error {
+            if error != nil {
                 print("新規登録をキャンセルしました")
             }
         }

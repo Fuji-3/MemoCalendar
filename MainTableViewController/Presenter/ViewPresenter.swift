@@ -17,6 +17,7 @@ protocol View_Presenter_input:AnyObject{
 //PresenterからViewに委託
 protocol View_Presenter_output:AnyObject{
     func dataFethCompleted(time_zone:String)
+    func error_Alert()
 }
 
 
@@ -45,14 +46,12 @@ extension ViewPresenter{
                     data.updateValue(food_data["name"] as Any, forKey: "name")
                     data.updateValue(food_data["kcal"] as Any, forKey: "kcal")
                     as_serect_FoodDB.append(data)
-                    //as_serect_FoodDB.updateValue(food_data["kcal"], forKey: food_data["name"] as? String ?? "0")
                 }
                 
                 let sored = as_serect_FoodDB.sorted { (data1 ,data2)->Bool in
                     if let kcal1 = data1["name"] as? String, let kcal2 = data2["name"] as? String {
                         return kcal1 > kcal2
                     } else {
-                        // "kcal"がnilの場合は後ろに表示されるようにします
                         return false
                     }
                 }
@@ -71,7 +70,6 @@ extension ViewPresenter{
                     if let kcal1 = data1["name"] as? String, let kcal2 = data2["name"] as? String {
                         return kcal1 > kcal2
                     } else {
-                        // "kcal"がnilの場合は後ろに表示されるようにします
                         return false
                     }
                 }
@@ -89,7 +87,6 @@ extension ViewPresenter{
                     if let kcal1 = data1["name"] as? String, let kcal2 = data2["name"] as? String {
                         return kcal1 > kcal2
                     } else {
-                        // "kcal"がnilの場合は後ろに表示されるようにします
                         return false
                     }
                 }
@@ -104,7 +101,6 @@ extension ViewPresenter{
 
 extension ViewPresenter:View_Presenter_input{
     func numberOfRowsInSection(seciton: Int) -> Int {
-        print("section___:\(seciton)")
         switch seciton{
             case 0:
                 return self.as_serect_FoodDB.count + 1
@@ -133,6 +129,7 @@ extension ViewPresenter:View_Presenter_input{
     
     func get_TableData(time: String, time_zone: String) {
         let dispatchGroup = DispatchGroup()
+        
         if time_zone == " 朝"{
             dispatchGroup.enter()
                 self.model.get_timezone_DB(time: time, time_zone: time_zone) { result in
@@ -140,7 +137,7 @@ extension ViewPresenter:View_Presenter_input{
                         case.success(let data):
                             self.as_serect_FoodDB = self.searchFoodDB_Format(data: data, time_zone: time_zone)
                             dispatchGroup.leave()
-                        case.failure(let error):break
+                        case.failure(_): break
                     }
                 }
         }
@@ -152,8 +149,7 @@ extension ViewPresenter:View_Presenter_input{
                         case.success(let data):
                             self.hiru_serect_FoodDB = self.searchFoodDB_Format(data: data, time_zone: time_zone)
                             dispatchGroup.leave()
-                        case.failure(let error):
-                            break
+                        case.failure(_):break
                     }
                 }
             
@@ -166,17 +162,18 @@ extension ViewPresenter:View_Presenter_input{
                         case.success(let data):
                             self.yoru_serect_FoodDB = self.searchFoodDB_Format(data: data, time_zone: time_zone)
                             dispatchGroup.leave()
-                        case.failure(let error):break
+                        case.failure(_):break
                     }
                 }
         }
         
         dispatchGroup.notify(queue: .main) {
-            print("Asa:\(self.get_AsaCellText)")
-            print("Hiru:\(self.get_HiruCellText)")
-            print("Yoru:\(self.get_YoruCellText)")
+            self.view?.dataFethCompleted(time_zone: time_zone)
                 self.view?.dataFethCompleted(time_zone: time_zone)
+            
+        
         }
+    
     }
     
     

@@ -39,8 +39,10 @@ class ViewController: UIViewController {
         self.dayTableView.register(SerectDataTableViewCell.nib, forCellReuseIdentifier: SerectDataTableViewCell.identifier)
         
         self.dayTableView.rowHeight = 50
+        
         let time =  todayFormatter(today_date: self.calendar.today!)
         self.get_serectDB(time: time)
+        
     }
     //serectDBに読み取り
     private func get_serectDB(time:String){
@@ -171,7 +173,6 @@ extension ViewController:UITableViewDataSource{
             return cell
         }
         if indexPath.section == 2 && indexPath.row <= self.view_presenter_input.get_YoruCellText.count {
-            //print("section:\(indexPath.section),\(indexPath.row)")
             let cell = tableView.dequeueReusableCell(withIdentifier: SerectDataTableViewCell.identifier, for: indexPath) as! SerectDataTableViewCell
             let data = self.view_presenter_input.get_YoruCellText[indexPath.row - 1]
             cell.serect_name.text = data["name"] as? String ?? "Name"
@@ -181,8 +182,6 @@ extension ViewController:UITableViewDataSource{
         }
         return cell
     }
-    
-    
 }
 
 extension ViewController:CellButtonTapProtocol{
@@ -211,6 +210,12 @@ extension ViewController:CellButtonTapProtocol{
 }
 
 extension ViewController:View_Presenter_output{
+    func error_Alert() {
+        let alertVC = UIAlertController(title: "エラー", message: "ネットに接続してください", preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .default))
+        self.present(alertVC, animated: true)
+    }
+    
     func dataFethCompleted(time_zone: String) {
         self.dayTableView.reloadData()
     }

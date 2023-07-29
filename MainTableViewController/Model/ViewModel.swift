@@ -28,7 +28,7 @@ extension ViewModel:get_SerectFood_DB{
         DispatchQueue.global().sync {
             switch time_zone{
                 case " 朝":
-                     //let data = self.get_Firebase(time: time, time_zone: time_zone, uid: uid)
+
                     let ref:DatabaseReference = Database.database().reference()
                     ref.child("ID").child(uid).child(time+time_zone).getData { error, snapshot in
                         guard snapshot?.exists() != nil else{

@@ -48,10 +48,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let rootViewVontroller = storyboard.instantiateViewController(withIdentifier: "MainVC")
             self.window?.rootViewController = rootViewVontroller
             self.window?.makeKeyAndVisible()
-            /*
-            if let navigationController = self.window?.rootViewController as? UINavigationController {
-                navigationController.pushViewController(rootViewVontroller, animated: true)
-            }*/
         }else{
             print("新規画面")
             let storyboard = UIStoryboard(name: "SigninViewController", bundle: Bundle.main)

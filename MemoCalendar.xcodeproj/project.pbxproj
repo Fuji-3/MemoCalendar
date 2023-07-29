@@ -10,7 +10,6 @@
 		762E1F172A51B43500E1DFCC /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762E1F152A51B43500E1DFCC /* TableViewController.swift */; };
 		762E1F1C2A51B5B000E1DFCC /* TableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 762E1F1B2A51B5B000E1DFCC /* TableViewController.storyboard */; };
 		762E1F1E2A526CAE00E1DFCC /* Cell_touch_event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762E1F1D2A526CAE00E1DFCC /* Cell_touch_event.swift */; };
-		762EBFC92A70D616008882B9 /* SerectFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762EBFC82A70D616008882B9 /* SerectFood.swift */; };
 		762EBFCD2A71455A008882B9 /* ViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762EBFCC2A71455A008882B9 /* ViewPresenter.swift */; };
 		762EBFCF2A71456D008882B9 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762EBFCE2A71456D008882B9 /* ViewModel.swift */; };
 		762EBFD42A72CDF7008882B9 /* SerectDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762EBFD22A72CDF7008882B9 /* SerectDataTableViewCell.swift */; };
@@ -46,7 +45,6 @@
 		762E1F152A51B43500E1DFCC /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		762E1F1B2A51B5B000E1DFCC /* TableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TableViewController.storyboard; sourceTree = "<group>"; };
 		762E1F1D2A526CAE00E1DFCC /* Cell_touch_event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell_touch_event.swift; sourceTree = "<group>"; };
-		762EBFC82A70D616008882B9 /* SerectFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerectFood.swift; sourceTree = "<group>"; };
 		762EBFCC2A71455A008882B9 /* ViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPresenter.swift; sourceTree = "<group>"; };
 		762EBFCE2A71456D008882B9 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		762EBFD22A72CDF7008882B9 /* SerectDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerectDataTableViewCell.swift; sourceTree = "<group>"; };
@@ -107,7 +105,6 @@
 			isa = PBXGroup;
 			children = (
 				76F6E61F2A5956650087C063 /* SearchFood.swift */,
-				762EBFC82A70D616008882B9 /* SerectFood.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -416,7 +413,6 @@
 				76F6E62C2A652BD50087C063 /* MemoCalendarAppCheck.swift in Sources */,
 				76F6E6292A5CF4F00087C063 /* SearchFoodPresenter.swift in Sources */,
 				762EBFCF2A71456D008882B9 /* ViewModel.swift in Sources */,
-				762EBFC92A70D616008882B9 /* SerectFood.swift in Sources */,
 				76F6E6202A5956650087C063 /* SearchFood.swift in Sources */,
 				76D57F382A4961E70090DE94 /* YoruTableViewCell.swift in Sources */,
 				76D57F302A4961890090DE94 /* AsaTableViewCell.swift in Sources */,

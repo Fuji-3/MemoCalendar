@@ -24,7 +24,6 @@ class TableViewController: UIViewController {
         
         self.searchFoot_searchBar.delegate = self
         self.searchFood_presenter = SearchFood_Presenter(view: self)
-        self.searchFood_presenter.get_serectFoodDB(vc: self)
         
         self.addDataTableView.delegate = self
         self.addDataTableView.dataSource = self

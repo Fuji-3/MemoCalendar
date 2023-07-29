@@ -13,9 +13,6 @@ protocol SearchFood_presenter_input:AnyObject{
     func cellForText(row: Int)->[String:Any]
     
     func serectFoodData(data:[String:Any],day:String)
-    func get_serectFoodDB(vc: TableViewController)
-    
-    
 }
 //PresenterからViewに委託
 protocol SearchFood_presenter_output:AnyObject{
@@ -62,23 +59,6 @@ extension SearchFood_Presenter{
 }
 
 extension SearchFood_Presenter:SearchFood_presenter_input {
-
-    func get_serectFoodDB(vc: TableViewController) {
-        let userDefaults = UserDefaults.standard.dictionary(forKey: "id")
-        let uid = userDefaults!["uid"]
-        let day = vc.navigationItem.title
-        self.model.get_serctFoodDB(day: day ?? "", uid: uid as! String) { result in
-            DispatchQueue.main.async {
-                switch result {
-                    case.success(let data):
-                        print("data:\(data)")
-                    case.failure(let error): break
-                }
-            }
-        }
-
-    }
-    
     //検索一覧から登録ボタンが押された処理
     func serectFoodData(data: [String : Any], day: String) {
         let userDefaults = UserDefaults.standard.dictionary(forKey: "id")
@@ -87,10 +67,9 @@ extension SearchFood_Presenter:SearchFood_presenter_input {
                 DispatchQueue.main.async {
                     switch result {
                         case .success(let str):
-                            print("str:\(str)")
                             self.view?.event_alet(text: str)
                         case.failure(let error):
-                            print("error:\(error)")
+                            print("検索ボタンが押されたError:\(error)")
                     }
                 }
             }
@@ -114,16 +93,13 @@ extension SearchFood_Presenter:SearchFood_presenter_input {
     
     //textFileを元にフードデータを読み取り
     func serathBarText(text: String) {
-        print("text:\(text)")
         self.model.get_searchFoodDB(foodName: text) { result in
             DispatchQueue.main.async { [self] in
                 switch result {
                 case.success(let data):
                     self.food_data = self.searchFoodDB_Format(data: data, text: text)
                     self.view?.output_serathData(data: self.food_data)
-                    
-                case.failure(let error):
-                    print("searchFood_presenter \(error)")
+                    case.failure(_):
                     self.view?.output_serathData(data: [:])
                 }
             }
