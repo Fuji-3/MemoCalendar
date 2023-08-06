@@ -40,7 +40,9 @@ class ViewController: UIViewController {
         
         self.dayTableView.rowHeight = 50
         
+        //今日のローカル日付を取得
         let time =  todayFormatter(today_date: self.calendar.today!)
+        //ローカル日付から該当のDBにアクセス
         self.get_serectDB(time: time)
         
     }
@@ -52,7 +54,7 @@ class ViewController: UIViewController {
     }
 }
 
-//FSCalendar関連処理
+//FSCalendar関連処理　or 日付関連処理
 extension ViewController {
     //日付をフォーマット
     func todayFormatter(today_date:Date)->String{

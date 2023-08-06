@@ -11,15 +11,14 @@ import FirebaseEmailAuthUI
 import FirebaseAppCheck
 
 class SigninViewController: UIViewController,FUIAuthDelegate {
-    private  var userDefaults:UserDefaults!
-    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passTextField: UITextField!
-    
     //新規登録
     @IBOutlet weak var addButton: UIButton!
     //ログイン
     @IBOutlet weak var loginButton: UIButton!
+    
+    private  var userDefaults:UserDefaults!
     
     //ログインButtonn
     @IBAction func LoginButton(_ sender: UIButton) {

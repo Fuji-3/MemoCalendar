@@ -40,8 +40,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the background to the foreground.
         // Use this method to undo the changes made on entering the background.
         let userDefault = UserDefaults.standard.value(forKey: "id")
-        print(userDefault.debugDescription)
-        
         if userDefault != nil  {
             print("Login 画面")
             let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
